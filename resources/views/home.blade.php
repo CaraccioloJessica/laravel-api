@@ -12,7 +12,7 @@
     <ul>
       @foreach ($genre -> movies as $movie)
         <li>
-          <h4 class="mt-3 text-success">
+          <h4 class="mt-4 text-success">
             Movie
           </h4>
           <span class="text-decoration-underline">Nome:</span> {{ $movie -> name }} <br>
@@ -28,7 +28,10 @@
 
             <div class="my-2">
               <a href="{{ route('delete', $movie) }}" class="bg-danger text-white p-1">CANCELLA</a>
+              -
+              <a href="{{ route('edit', $movie) }}" class="bg-warning text-white p-1">MODIFICA</a> 
             </div>
+
         </li>
       @endforeach
     </ul>

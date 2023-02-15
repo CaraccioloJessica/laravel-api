@@ -1,1 +1,3 @@
-<h2 class="text-center">Movies</h2>
+<h2 class="text-center">
+  <a href="{{ route('home') }}">Movies</a>
+</h2>

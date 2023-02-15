@@ -19,6 +19,14 @@ Route::get('/create', [MainController::class, 'create'])
 Route::post('/create', [MainController::class, 'store'])
   ->name('store');
 
+//EDIT
+Route::get('/edit/{movie}', [MainController::class, 'edit'])
+  ->name('edit');
+
+// UPDATE
+Route::post('/edit/{movie}', [MainController::class, 'update'])
+  ->name('update');
+
 // DELETE MOVIE ROUTE
 Route::get('/delete/{movie}', [MainController::class, 'delete'])
   ->name('delete');

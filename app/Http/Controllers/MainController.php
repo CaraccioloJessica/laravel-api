@@ -65,6 +65,28 @@ class MainController extends Controller
     return redirect()->route('home');
   }
 
+  // EDIT MOVIE
+  public function edit(Movie $movie)
+  {
+    return view('edit', compact('movie'));
+  }
+
+  // UPDATE MOVIE
+  public function update(Request $request, Movie $movie)
+  {
+
+    $data = $request->validate([
+      'name' => 'required|string|max:64',
+      'year' => 'required|date_format:Y',
+      'cashOut' => 'required|integer',
+    ]);
+
+    $movie->update($data);
+    $movie->save();
+
+    return redirect()->route('home', $movie);
+  }
+
   // DELETE MOVIE
   public function delete(Movie $movie)
   {
