@@ -42,7 +42,7 @@ class MainController extends Controller
     );
   }
 
-  // STORE
+  // STORE MOVIE
   public function store(Request $request)
   {
     $data = $request->validate([
@@ -61,6 +61,14 @@ class MainController extends Controller
 
     $tags = Tag::find($data['tags']);
     $movie->tags()->attach($tags);
+
+    return redirect()->route('home');
+  }
+
+  // DELETE MOVIE
+  public function delete(Movie $movie)
+  {
+    $movie->delete();
 
     return redirect()->route('home');
   }

@@ -21,7 +21,9 @@ return new class extends Migration {
     Schema::table('movie_tag', function (Blueprint $table) {
 
       $table->foreignId('movie_id')
-        ->constrained();
+        ->constrained()
+        ->onDelete('cascade');
+
       $table->foreignId('tag_id')
         ->constrained();
     });

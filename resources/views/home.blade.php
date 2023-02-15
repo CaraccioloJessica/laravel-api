@@ -12,7 +12,9 @@
     <ul>
       @foreach ($genre -> movies as $movie)
         <li>
-          <h4 class="mt-3 text-success">Movie</h4>
+          <h4 class="mt-3 text-success">
+            Movie
+          </h4>
           <span class="text-decoration-underline">Nome:</span> {{ $movie -> name }} <br>
           <span class="text-decoration-underline">Anno:</span> {{ $movie -> year }} <br>
           <span class="text-decoration-underline">Incassi:</span> {{ $movie -> cashOut }} &dollar;
@@ -22,6 +24,10 @@
               @foreach ($movie -> tags as $tag)
                 #{{ $tag -> name }}
               @endforeach
+            </div>
+
+            <div class="my-2">
+              <a href="{{ route('delete', $movie) }}" class="bg-danger text-white p-1">CANCELLA</a>
             </div>
         </li>
       @endforeach
