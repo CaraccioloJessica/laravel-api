@@ -3,6 +3,10 @@
 @section('content')
     
 <h1>Film per genere</h1>
+<div class="my-3">
+  <a href="{{ route('create') }}" class="bg-info text-white p-2">CREA MOVIE</a>
+</div>
+
   @foreach ($genres as $genre)
     <h2 class="text-primary">Genere: {{ $genre -> name }}</h2>
     <ul>
